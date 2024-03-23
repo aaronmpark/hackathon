@@ -18,13 +18,11 @@ const Cover = () => {
 
           <main role="main">
             <h1 className="cover-heading">Aaron Park = 🤓</h1>
-            <p className="lead">
-              Design Your Perfect Keyboard: Customization at Your Fingertips
-            </p>
+            <p className="lead">Cover Page</p>
             <p className="lead">
               <button
                 className="btn btn-lg btn-secondary"
-                onClick={() => navigate("/home")}
+                //onClick={() => navigate("/home")}
               >
                 Begin
               </button>
