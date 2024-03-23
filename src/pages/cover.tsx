@@ -22,7 +22,7 @@ const Cover = () => {
             <p className="lead">
               <button
                 className="btn btn-lg btn-secondary"
-                //onClick={() => navigate("/home")}
+                onClick={() => navigate("/About")}
               >
                 Begin
               </button>
