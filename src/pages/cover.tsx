@@ -20,8 +20,14 @@ const Cover = () => {
         <div
           style={{
             position: "relative",
-            width: "calc(100% - 210px)",
+            width: "100vh", // Ensure the width and height are equal
+            height: "100vh", // Adjust size as needed
+            borderRadius: "50%", // Makes the div circular
             backgroundColor: "white",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "hidden",
           }}
         >
           <img
@@ -30,8 +36,7 @@ const Cover = () => {
             style={{
               width: "100%",
               height: "auto",
-              maxHeight: "70vh",
-              objectFit: "contain",
+              objectFit: "cover",
               filter: "blur(2px)",
             }}
           />
@@ -45,30 +50,48 @@ const Cover = () => {
               textAlign: "center",
             }}
           >
-            <h1
+            <style>
+              {`
+          @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+          }
+          @keyframes blinkCursor {
+            from { border-right-color: transparent; }
+            to { border-right-color: black; }
+          }
+          .typing {
+            display: inline-block;
+            overflow: hidden;
+            border-right: 3px solid black; /* Cursor */
+            white-space: nowrap; /* Ensure the text stays in one line */
+            letter-spacing: 2px; /* Optional: Adjust spacing between letters */
+            animation: 
+              typing 4s steps(40, end),
+              blinkCursor .75s step-end infinite;
+          }
+        `}
+            </style>
+            <div
+              className="typing-container"
               style={{
-                color: "black",
-                display: "flex",
-                fontFamily: "'Verdana', sans-serif",
-                fontVariant: "small-caps",
-                justifyContent: "center",
-                alignItems: "center",
-                height: "100%",
-                fontSize: "3vw",
-                fontWeight: "500",
+                fontSize: "24px",
+                fontFamily: "monospace",
+                margin: "20px",
               }}
             >
-              Hoo's curious about Cybersecurity?
-            </h1>
+              <span className="typing">Hoo's curious about Cybersecurity?</span>
+            </div>
             <button
               className="btn btn-lg btn-secondary"
               style={{
                 backgroundColor: "#282c4c",
                 color: "white",
                 padding: "10px 20px",
-                borderRadius: "50px",
+                borderRadius: "50px", // Keeps the button rounded
+                marginTop: "20px", // Adds some space between the text and button
               }}
-              onClick={() => navigate("/About")}
+              onClick={() => navigate("/Instructions")}
             >
               Begin
             </button>
@@ -79,11 +102,11 @@ const Cover = () => {
         className="text-center"
         style={{
           backgroundColor: "#282c4c",
-          color: "#d9451e",
+          color: "#ec7808",
           fontFamily: "'Verdana', sans-serif",
           fontVariant: "small-caps",
           fontWeight: 500,
-          padding: "54px",
+          padding: "20px", // Adjusted padding
         }}
       >
         Not Affiliated With The University of Virginia

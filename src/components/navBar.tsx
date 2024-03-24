@@ -8,7 +8,7 @@ export function Navbar() {
         <Stack
           className="justify-content-between w-100 px-5"
           style={{
-            color: "#d9451e",
+            color: "#ec7808",
             fontFamily: "'Verdana', sans-serif",
             fontVariant: "small-caps",
             fontWeight: 500,

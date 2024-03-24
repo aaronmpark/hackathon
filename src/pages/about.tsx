@@ -19,7 +19,7 @@ const About = () => {
         <div className="text-center mt-5">
           <h1 className="mb-4">Congratulations!</h1>
           <h4>
-            You have sucessfully <b>breached the vulnerability</b> of our site.
+            You have successfully <b>breached the vulnerability</b> of our site.
           </h4>
         </div>
         <div className="mt-5">
