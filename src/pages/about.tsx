@@ -43,8 +43,11 @@ const About = () => {
             <li>
               <a href="https://hacksplaining.com/lessons">Hacksplaining: </a> offers interactive cybersecurity training focused on teaching users about various security vulnerabilities and how to defend against them.
             </li>
-            <li className="mb-3">
+            <li>
               <a href="HackTheBox">Hackthebox: </a> provides a variety of virtual machines and challenges designed to test and improve penetration testing skills
+            </li>
+            <li className="mb-5">
+              <a href="Cybrary.it">Cybrary: </a> helps individuals diversify and enhance their cybersecurity skills through a comprehensive suite of lessons, assessments, and practice exercises. 
             </li>
           </ul>
         </div>
