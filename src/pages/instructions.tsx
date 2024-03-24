@@ -24,7 +24,7 @@ const Instruction = () => {
           </div>
         </Collapse>
       </>
-      <button onClick={() => navigate("/About")}>TO COVER PAGE</button>
+      <button onClick={() => navigate("/About")}>TO THE COVER PAGE</button>
     </Container>
   );
 };
