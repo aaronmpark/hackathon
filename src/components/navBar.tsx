@@ -4,7 +4,7 @@ import { Stack, Navbar as NavbarBs } from "react-bootstrap";
 export function Navbar() {
   return (
     <>
-      <NavbarBs className="pt-4 pb-4" style={{ backgroundColor: "#282c4c" }}>
+      <NavbarBs className="pt-3 pb-3" style={{ backgroundColor: "#232e4c" }}>
         <Stack
           className="justify-content-between w-100 px-5"
           style={{
