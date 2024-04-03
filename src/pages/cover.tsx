@@ -6,38 +6,38 @@ const Cover = () => {
   const navigate = useNavigate();
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-      <Navbar />
+    <>
       <div
         style={{
-          flexGrow: 1,
-          backgroundColor: "#282c4c",
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          flexDirection: "column",
+          height: "100vh",
+          overflow: "hidden",
         }}
       >
+        <Navbar />
+        <div style={{ background: "#181c3c" }}>&nbsp;</div>
         <div
           style={{
             position: "relative",
-            width: "100vh", // Ensure the width and height are equal
-            height: "100vh", // Adjust size as needed
-            borderRadius: "50%", // Makes the div circular
-            backgroundColor: "white",
+            flexGrow: 1,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             overflow: "hidden",
+            maxHeight: "calc(100vh - 160px)", // Adjust based on actual Navbar and Footer height
+            background:
+              "linear-gradient(to bottom left, #232e4c 50%, white 50%)",
           }}
         >
           <img
             src={"../imgs/owl.png"}
             alt="Owl"
             style={{
-              width: "100%",
-              height: "auto",
-              objectFit: "cover",
-              filter: "blur(2px)",
+              maxWidth: "100%",
+              maxHeight: "100%",
+              objectFit: "contain", // Use 'contain' to ensure the image fits within the div without cropping
+              filter: "blur(3.5px)",
             }}
           />
           <div
@@ -52,32 +52,35 @@ const Cover = () => {
           >
             <style>
               {`
-          @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-          }
-          @keyframes blinkCursor {
-            from { border-right-color: transparent; }
-            to { border-right-color: black; }
-          }
-          .typing {
-            display: inline-block;
-            overflow: hidden;
-            border-right: 3px solid black; /* Cursor */
-            white-space: nowrap; /* Ensure the text stays in one line */
-            letter-spacing: 2px; /* Optional: Adjust spacing between letters */
-            animation: 
-              typing 4s steps(40, end),
-              blinkCursor .75s step-end infinite;
-          }
-        `}
+              @keyframes typing {
+                from { width: 0; }
+                to { width: 100%; }
+              }
+              @keyframes blinkCursor {
+                from { border-right-color: transparent; }
+                to { border-right-color: black; }
+              }
+              .typing {
+                display: inline-block;
+                overflow: hidden;
+                border-right: 3px solid black;
+                white-space: nowrap;
+                letter-spacing: 2px;
+                animation: 
+                  typing 4s steps(40, end),
+                  blinkCursor .75s step-end infinite;
+              }
+            `}
             </style>
             <div
               className="typing-container"
               style={{
-                fontSize: "24px",
-                fontFamily: "monospace",
+                fontSize: "35px",
+                fontFamily: "'Verdana', sans-serif",
+                fontVariant: "small-caps",
+                fontWeight: 500,
                 margin: "20px",
+                color: "black",
               }}
             >
               <span className="typing">Hoo's curious about Cybersecurity?</span>
@@ -85,11 +88,11 @@ const Cover = () => {
             <button
               className="btn btn-lg btn-secondary"
               style={{
-                backgroundColor: "#282c4c",
+                fontFamily: "'Verdana', sans-serif",
+                backgroundColor: "#232e4c",
                 color: "white",
                 padding: "10px 20px",
-                borderRadius: "50px", // Keeps the button rounded
-                marginTop: "20px", // Adds some space between the text and button
+                marginTop: "20px",
               }}
               onClick={() => navigate("/Instructions")}
             >
@@ -97,21 +100,19 @@ const Cover = () => {
             </button>
           </div>
         </div>
+        <footer
+          className="border-top text-center"
+          style={{
+            fontFamily: "'Verdana', sans-serif",
+            fontVariant: "small-caps",
+            fontWeight: 500,
+            padding: "20px", // Consider this in your total height calculation
+          }}
+        >
+          Not Affiliated With The University of Virginia
+        </footer>
       </div>
-      <footer
-        className="text-center"
-        style={{
-          backgroundColor: "#282c4c",
-          color: "#ec7808",
-          fontFamily: "'Verdana', sans-serif",
-          fontVariant: "small-caps",
-          fontWeight: 500,
-          padding: "20px", // Adjusted padding
-        }}
-      >
-        Not Affiliated With The University of Virginia
-      </footer>
-    </div>
+    </>
   );
 };
 
